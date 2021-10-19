@@ -26,17 +26,15 @@ This assumes the local machine is running on Ubuntu
 3. Clone this git repository
 
     ```bash
-      git clone https://github.com/Tinitto/compose-postgres-metabase.git
+      git clone https://github.com/abhitkumardas/metabase-postgres.git
     ```
 
-4. Enter the compose-postgres-metabase folder
+4. Enter the metabase-postgres folder
 
     ```bash
-      cd compose-postgres-metabase
+      cd metabase-postgres
     ```
-
-5. Convert ```config/metabase_database.env.example``` to ```config/metabase_database.env```.
-6. Update the environment variables ```MB_DB_PASS```, ```MB_DB_HOST```, ```MB_ENCRYPTION_SECRET_KEY``` and save.
+5. Update the environment variables ```MB_DB_PASS```, ```MB_DB_HOST```, ```MB_ENCRYPTION_SECRET_KEY``` and save.
 
     ```bash
     ENV MB_DB_PASS=<put_here_the_password_for_the_metabase_user>
@@ -44,9 +42,7 @@ This assumes the local machine is running on Ubuntu
     ENV MB_DB_HOST=<put here the IP address for the Metabase database server e.g. 00.000.000.00>
     ENV MB_ENCRYPTION_SECRET_KEY=<Add a random string here as the secret>
     ```
-
-7. Convert ```config/postgres.env.example``` to ```config/postgres.env```.
-8. Update the environment variables ```POSTGRES_PASSWORD```, ```METABASE_PASSWORD``` and save.
+6. Update the environment variables ```POSTGRES_PASSWORD```, ```METABASE_PASSWORD``` and save.
 
     ```bash
     # Add the password for the postgres user
@@ -55,20 +51,20 @@ This assumes the local machine is running on Ubuntu
     METABASE_PASSWORD=<put here the password for the metabase user>
     ```
 
-9. Start the docker compose services
+7. Start the docker compose services
 
     ```bash
       sudo docker-compose up -d
     ```
 
-10. Set up your metabase instance by visiting the [local metabase start URL](http://localhost:3000)
-If you are on a server, use ```http://<server IP>:3000```.
+8. Set up your metabase instance by visiting the [local metabase start URL](http://localhost:8123)
+If you are on a server, use ```http://<server IP>:8123```.
 
 ## Service - Port Mappings
 
 | Service | Port |
 | --- | --- |
-| Metabase | 3000 |
+| Metabase | 8123 |
 | Postgres | 54320 |
 
 ## Acknowledgement
